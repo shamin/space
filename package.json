@@ -1,0 +1,21 @@
+{
+  "name": "space",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "git@github.com:shaminmeerankutty/space.git",
+  "author": "shamin meerankutty shamin616@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@storybook/addon-actions": "^4.0.4",
+    "@storybook/react": "^4.0.4",
+    "babel-loader": "^8.0.4"
+  },
+  "scripts": {
+    "dev": "start-storybook -p 9001"
+  },
+  "dependencies": {
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
+  }
+}
