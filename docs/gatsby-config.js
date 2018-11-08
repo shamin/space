@@ -1,14 +1,22 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Space Documentation',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     {
+      resolve: `gatsby-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve('./src/components/page.js')
+        }
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `space`,
+        path: `${__dirname}/src/`,
       },
     },
     'gatsby-transformer-sharp',
