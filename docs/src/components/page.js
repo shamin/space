@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import Layout from './layout'
+import MDXStyler from './mdxStyler'
 
 export default class Page extends Component {
   render() {
     return (
       <Layout>
-        <div>{this.props.children}</div>
+        <MDXStyler>{this.props.children}</MDXStyler>
       </Layout>
     )
   }
