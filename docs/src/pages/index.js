@@ -7,7 +7,6 @@ const IndexPage = () => (
   <Layout>
     <h1>Space Documentation</h1>
     <p>Space is a minimal react ui library</p>
-    <Sidebar />
   </Layout>
 )
 

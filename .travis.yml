@@ -15,5 +15,6 @@ deploy:
   github-token: $GITHUB_TOKEN
   local-dir: docs/public
   target-branch: gh-pages
+  fqdn: http://space.shamin.me
   on:
     branch: master
