@@ -11,7 +11,8 @@ const Sidebar = () => (
             node {
               id
               frontmatter {
-                title
+                title,
+                path
               }
             }
           }
@@ -22,7 +23,7 @@ const Sidebar = () => (
       <>
         <div>All components{
           data.allMdx.edges.map(edge => (
-            <div key={edge.node.id}>{edge.node.frontmatter.title}</div>
+            <a href={edge.node.frontmatter.path} key={edge.node.id}>{edge.node.frontmatter.title}</a>
           ))}</div>
       </>
     )}
