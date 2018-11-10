@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const Input = styled.input.attrs({
-  type: "text"
+  type: props => (props.type),
 })`
   ::placeholder {
-    color: palevioletred;
+    color: gray;
   }
 `
 

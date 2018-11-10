@@ -4,5 +4,5 @@ import { TextInput } from '..'
 
 storiesOf('TextInput', module)
   .add('simple text input', () => (
-    <TextInput type="text" />
+    <TextInput type="text" placeholder="Text input" />
   ))
