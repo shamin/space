@@ -5,7 +5,7 @@ import Sidebar from '../components/sidebar';
 
 const IndexPage = () => (
   <Layout>
-    <h1>Space</h1>
+    <h1>Space Documentation</h1>
     <p>Space is a minimal react ui library</p>
     <Sidebar />
   </Layout>

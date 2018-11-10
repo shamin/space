@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Space Documentation',
+    title: 'Space',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -20,6 +20,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+    `gatsby-plugin-styled-components`,
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
