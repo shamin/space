@@ -14,6 +14,14 @@ const Logo = styled.div`
 
 const SideItems = styled.ul`
   padding: 20px 10px;
+  list-style: none;
+  margin-left: 0px;
+  > li{  
+    a{
+      text-decoration: none;
+      color: #5f27cd;
+    }
+  }
 `
 
 const SidebarStyle = styled.div`
