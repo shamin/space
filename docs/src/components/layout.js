@@ -4,7 +4,6 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from "styled-components"
 
-import './layout.css'
 import Sidebar from './sidebar';
 
 const Container = styled.div`
