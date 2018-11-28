@@ -1,20 +1,11 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-const ChipsElement = styled.div`
-  background: tomato;
+export const Chips = styled.div`
+  background: #5f27cd;
   display: inline-block;
   color: #ffffff;
-  padding: 5px 10px;
+  padding: 10px 15px;
   border-radius: 20px;
+  margin-left: 10px;
 `;
-
-export class Chips extends Component {
-  render() {
-    return (
-      <ChipsElement>
-        {this.props.children}
-      </ChipsElement>
-    );
-  }
-}

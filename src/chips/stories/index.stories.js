@@ -4,5 +4,8 @@ import { Chips } from '..'
 
 storiesOf('Chips', module)
   .add('chips', () => (
-    <Chips>Chips</Chips>
+    <>
+    <Chips>Thanos</Chips>
+    <Chips>Deadpool</Chips>
+    </>
   ))
