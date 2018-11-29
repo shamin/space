@@ -4,5 +4,8 @@ import { Breadcrumb } from '..'
 
 storiesOf('Breadcrumb', module)
   .add('simple breadcrump', () => (
-    <Breadcrumb />
+    <Breadcrumb>
+      <li>Home</li>
+      <li>About</li>
+    </Breadcrumb>
   ))
