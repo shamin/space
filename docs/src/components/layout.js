@@ -2,9 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import styled from "styled-components"
+import styled from 'styled-components'
 
-import Sidebar from './sidebar';
+import Sidebar from './sidebar'
+
+const App = styled.div`
+  font-family: monospace;
+`
 
 const Container = styled.div`
   margin-left: 300px;
@@ -24,7 +28,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <App>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -35,10 +39,8 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Sidebar siteTitle={data.site.siteMetadata.title} />
-        <Container>
-          {children}
-        </Container>
-      </>
+        <Container>{children}</Container>
+      </App>
     )}
   />
 )
