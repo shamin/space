@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
+import React, { Component } from "react";
+import styled from "styled-components";
 
 const SelectElement = styled.div`
   position: relative;
@@ -25,24 +25,21 @@ const SelectOption = styled.select`
   width: 100%;
   border-radius: 2px;
   border: none;
-  background-color: 'red';
+  background-color: "red";
   -webkit-appearance: none;
   outline: none;
   font-size: 1rem;
   padding: 10px 25px;
   padding-right: 35px;
-  color:#000;
-`
+  color: #000;
+`;
 
 export class Select extends Component {
   render() {
     return (
       <SelectElement>
-        <SelectOption>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
+        <SelectOption defaultValue={this.props.defaultValue}>
+          {this.props.children}
         </SelectOption>
       </SelectElement>
     );

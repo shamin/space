@@ -2,10 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/nightOwl'
+import styled from 'styled-components'
+
+const Pre = styled.pre`
+  padding: 30px;
+  border-radius: 3px;
+`
 
 export default class SyntaxHighlighter extends React.PureComponent {
   static propTypes = {
-    children: PropTypes.string
+    children: PropTypes.string,
   }
 
   render() {
@@ -17,7 +23,7 @@ export default class SyntaxHighlighter extends React.PureComponent {
         theme={theme}
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={`${className} syntax-highlight`} style={style}>
+          <Pre className={`${className} syntax-highlight`} style={style}>
             {tokens.map((line, i) => (
               <div {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => (
@@ -25,7 +31,7 @@ export default class SyntaxHighlighter extends React.PureComponent {
                 ))}
               </div>
             ))}
-          </pre>
+          </Pre>
         )}
       </Highlight>
     )
