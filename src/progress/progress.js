@@ -2,8 +2,15 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 export const Progress = styled.div`
-  background: #6d6d6d;
-  border-radius: 100%;
-  width: 100px;
-  height: 100px;
+  background: #f1f2f6;
+  width: 200px;
+  height: 10px;
+  position: relative;
+  &::after{
+    content: "";
+    position: absolute;
+    background: #5f27cd;
+    width: ${props => props.percentage ? `${props.percentage}%` : `10%`};;
+    height: 100%;  
+  }
 `;
