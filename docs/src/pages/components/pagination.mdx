@@ -7,8 +7,20 @@ import { Pagination } from '../../../../src'
 
 ## Pagination
 
-<Pagination pages={[1, 2, 3, 4, 5]} currentpage={2} />
+<Pagination
+  pages={[1, 2, 3, 4, 5]}
+  currentpage={2}
+  onItemClick={page => {
+    console.log(page)
+  }}
+/>
 
 ```jsx
-<Pagination pages={[1,2,3,4,5]} currentpage={2}/>
+<Pagination
+  pages={[1, 2, 3, 4, 5]}
+  currentpage={2}
+  onItemClick={page => {
+    console.log(page)
+  }}
+/>
 ```

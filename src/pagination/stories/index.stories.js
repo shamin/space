@@ -4,5 +4,5 @@ import { Pagination } from '..'
 
 storiesOf('Pagination', module)
   .add('simple pagination', () => (
-    <Pagination pages={[1,2,3,4,5]} currentpage={2}/>
+    <Pagination pages={[1,2,3,4,5]} currentpage={2} onItemClick={(page)=>{console.log(page)}}/>
   ))

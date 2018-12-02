@@ -16,18 +16,26 @@ const PaginationLinks = styled.ul`
 `;
 
 export class Pagination extends React.Component {
+  constructor(props) {
+    super(props);
+    this.itemClick = this.itemClick.bind(this)
+  }
+  itemClick(page) {
+    this.props.onItemClick(page)
+  }
   render() {
+    const { currentpage } = this.props
     return (
       <div>
-        <a>previous</a>
+        <a onClick={()=>{this.itemClick(currentpage-1)}}>previous</a>
         <PaginationLinks>
           {this.props.pages.map(page => (
-            <li className={page === this.props.currentpage ? "active" : ""}>
+            <li key={page} className={page === currentpage ? "active" : ""} onClick={()=>{this.itemClick(page)}}>
               {page}
             </li>
           ))}
         </PaginationLinks>
-        <a>next</a>
+        <a onClick={()=>{this.itemClick(currentpage+1)}}>next</a>
       </div>
     );
   }
