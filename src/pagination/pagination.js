@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 const PaginationLinks = styled.ul`
+  padding: 0;
   list-style: none;
+  display: inline;
   li {
     display: inline;
     padding: 10px;
@@ -16,13 +18,17 @@ const PaginationLinks = styled.ul`
 export class Pagination extends React.Component {
   render() {
     return (
-      <PaginationLinks>
-        {this.props.pages.map(page => (
-          <li className={page === this.props.currentpage ? "active" : ""}>
-            {page}
-          </li>
-        ))}
-      </PaginationLinks>
+      <div>
+        <a>previous</a>
+        <PaginationLinks>
+          {this.props.pages.map(page => (
+            <li className={page === this.props.currentpage ? "active" : ""}>
+              {page}
+            </li>
+          ))}
+        </PaginationLinks>
+        <a>next</a>
+      </div>
     );
   }
 }
