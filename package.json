@@ -1,9 +1,11 @@
 {
   "name": "react-space-kit",
   "version": "1.0.1",
+  "description": "🚀 Minimal React UI component library built with styled components 💅",
   "repository": "git@github.com:shaminmeerankutty/space.git",
   "author": "shamin meerankutty shamin616@gmail.com",
   "license": "MIT",
+  "homepage": "http://space.shamin.me",
   "devDependencies": {
     "@babel/cli": "^7.2.0",
     "@babel/core": "^7.1.2",
