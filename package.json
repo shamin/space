@@ -1,23 +1,28 @@
 {
   "name": "react-space-kit",
-  "version": "1.0.0",
-  "main": "src/index.js",
+  "version": "1.0.1",
   "repository": "git@github.com:shaminmeerankutty/space.git",
   "author": "shamin meerankutty shamin616@gmail.com",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.2.0",
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.2.1",
     "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-react": "^7.0.0",
     "@storybook/addon-actions": "^4.0.4",
     "@storybook/react": "^4.0.4",
-    "babel-cli": "^6.26.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-add-react-displayname": "^0.0.5",
     "concurrently": "^4.1.0",
     "glob": "^7.1.3"
   },
+  "main": "commonjs/index.js",
+  "module": "esm/index.js",
+  "files": [
+    "commonjs",
+    "esm"
+  ],
   "scripts": {
     "start": "npm run dev",
     "dev": "start-storybook -p 9001",
