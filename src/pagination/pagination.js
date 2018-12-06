@@ -15,7 +15,7 @@ const PaginationLinks = styled.ul`
   }
 `;
 
-export class Pagination extends React.Component {
+export class Pagination extends Component {
   constructor(props) {
     super(props);
     this.itemClick = this.itemClick.bind(this)

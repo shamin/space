@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 import styled from 'styled-components'
 
 export const Table = styled.table`
@@ -27,27 +26,3 @@ export const Table = styled.table`
   padding-bottom: calc(0.725rem - 1px);
 }
 `
-
-// export class Table extends Component {
-//   render() {
-//     return (
-//       <TableStyled>
-//         <tr>
-//           <th>Firstname</th>
-//           <th>Lastname</th>
-//           <th>Age</th>
-//         </tr>
-//         <tr>
-//           <td>Jill</td>
-//           <td>Smith</td>
-//           <td>50</td>
-//         </tr>
-//         <tr>
-//           <td>Eve</td>
-//           <td>Jackson</td>
-//           <td>94</td>
-//         </tr>
-//       </TableStyled>
-//     )
-//   }
-// }
