@@ -70,7 +70,7 @@ export class RadioButton extends Component {
         onClick={() => this.props.onChange(!this.props.checked)}
       >
         <input
-          type="checkbox"
+          type="radio"
           checked={this.props.checked}
           disabled={this.props.disabled}
         />

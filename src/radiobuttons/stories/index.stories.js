@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { RadioButton } from '..'
 
-storiesOf('Checkbox', module)
+storiesOf('Radio Button', module)
   .add('radio button', () => (
-    <RadioButton label="Checkbox" checked />
+    <RadioButton label="radio" checked />
   ))
