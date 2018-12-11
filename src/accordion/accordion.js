@@ -32,7 +32,7 @@ export class Accordion extends React.Component {
       state: { openSections },
     } = this;
     return (
-      <div className="group">
+      <div className="group" style={{maxWidth: '300px'}}>
         {children.map(child => (
           <AccordionSection
             isOpen={!!openSections[child.props.label]}
