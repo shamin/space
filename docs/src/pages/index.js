@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import { Link } from 'gatsby'
 import { Button } from '../../../src'
+import Logo from '../components/logo'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -19,10 +20,13 @@ const Container = styled.div`
 
 const IndexPage = () => (
   <Container>
+    <Logo />
     <GlobalStyle />
     <h1>Space</h1>
     <p>Minimal react ui library</p>
-      <Link to="/docs"><Button>Documentation</Button></Link>
+    <Link to="/docs">
+      <Button>Documentation</Button>
+    </Link>
   </Container>
 )
 
