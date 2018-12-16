@@ -17,6 +17,7 @@ const SideItems = styled.ul`
   list-style: none;
   margin-left: 0px;
   > li{  
+    padding: 5px 0;
     a{
       text-decoration: none;
       color: #5f27cd;
@@ -29,7 +30,7 @@ const SidebarStyle = styled.div`
   position: fixed;
   top: 0;
   height: 100%;
-  width: 300px;
+  width: 250px;
   padding: 20px;
 `
 
