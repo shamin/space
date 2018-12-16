@@ -13,7 +13,7 @@ const Logo = styled.div`
 `
 
 const SideItems = styled.ul`
-  padding: 20px 10px;
+  padding: 0px 10px;
   list-style: none;
   margin-left: 0px;
   > li{  
@@ -30,7 +30,7 @@ const SidebarStyle = styled.div`
   position: fixed;
   top: 0;
   height: 100%;
-  width: 250px;
+  width: 200px;
   padding: 20px;
 `
 
@@ -57,10 +57,9 @@ const Sidebar = ({ siteTitle }) => (
           <Link
             to="/"
           >
-            {siteTitle}
+            💅{siteTitle}
           </Link>
         </Logo>
-        <div>Components</div>
         <SideItems>
           {
             data.allMdx.edges.map(edge => (
