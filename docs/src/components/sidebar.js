@@ -63,7 +63,13 @@ const Sidebar = ({ siteTitle }) => (
         <SideItems>
           {
             data.allMdx.edges.map(edge => (
-              <li key={edge.node.id}><a href={edge.node.frontmatter.path}>{edge.node.frontmatter.title}</a></li>
+              <li>
+                <Link
+                to={edge.node.frontmatter.path}
+                >
+                  {edge.node.frontmatter.title}
+                </Link>
+              </li>
             ))
           }
         </SideItems>
