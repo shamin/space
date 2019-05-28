@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/space',
   siteMetadata: {
     title: 'Space',
   },
