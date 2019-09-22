@@ -33,7 +33,9 @@
     "build": "concurrently --names 'commonjs,esm' 'yarn run build-commonjs' 'yarn run build-esm'"
   },
   "dependencies": {
-    "emotion": "^10.0.17",
+    "@emotion/core": "^10.0.17",
+    "babel-plugin-emotion": "^10.0.19",
+    "emotion-theming": "^10.0.19",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   }
