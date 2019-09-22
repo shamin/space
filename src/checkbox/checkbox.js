@@ -17,7 +17,8 @@ const baseStyle = css`
     &:before {
       content: '';
       position: absolute;
-      left:0; top: 1px;
+      left:0; 
+      top: 1px;
       width: 20px; 
       height: 20px; 
       background: rgb(241, 242, 246);
@@ -70,23 +71,21 @@ const baseStyle = css`
   }
 `
 
-export const Base = (props) => {
-  return (
-    <div
-      onClick={() => (!props.disabled && props.onChange(!props.checked))}
-      css={baseStyle}
-      {...props}
-    >
-      <input
-        type="checkbox"
-        checked={props.checked}
-        disabled={props.disabled}
-        onChange={() => { }}
-      />
-      <label>{props.label}</label>
-    </div>
-  )
-}
+export const Base = (props) => (
+  <div
+    onClick={() => (!props.disabled && props.onChange(!props.checked))}
+    css={baseStyle}
+    {...props}
+  >
+    <input
+      type="checkbox"
+      checked={props.checked}
+      disabled={props.disabled}
+      onChange={() => { }}
+    />
+    <label>{props.label}</label>
+  </div>
+)
 
 const checkboxStyle = (theme) => css`
   > input + label {
