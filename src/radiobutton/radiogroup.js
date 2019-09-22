@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import defaultTheme from '../themes/light';
 
 const baseStyle = css`
+  margin-bottom: 10px;
   > input {
      display: none;
   }
@@ -19,22 +20,21 @@ const baseStyle = css`
       position: absolute;
       left:0; top: 1px;
       width: 20px; 
-      height: 20px; 
+      height: 20px;
+      border-radius: 10px;
       background: rgb(241, 242, 246);
-      border-radius: 3px; 
       box-shadow: ${defaultTheme.boxShadow};
     }
     &:after {
       content: '';
       position: absolute;
-      top: 3px; 
-      left: 6px;
-      border-bottom: 2px solid ${defaultTheme.colors.primary};
-      border-right: 2px solid ${defaultTheme.colors.primary};
-      width: 5px;
+      top: 6px; 
+      left: 5px;
+      background: ${defaultTheme.colors.primary};
+      border-radius: 50%;
+      width: 10px;
       height: 10px;
       font-size: 16px;
-      transform: rotate(45deg);
       transition: all .1s;
     }
   }
@@ -55,8 +55,7 @@ const baseStyle = css`
   }
   > input:disabled:checked + label {
     &:after {
-      border-bottom: 2px solid ${defaultTheme.colors.primaryDisabled};
-      border-right: 2px solid ${defaultTheme.colors.primaryDisabled};
+      background: ${defaultTheme.colors.primaryDisabled};
     }
   }
   > input:disabled + label {
@@ -73,12 +72,12 @@ const baseStyle = css`
 export const Base = (props) => {
   return (
     <div
-      onClick={() => (!props.disabled && props.onChange(!props.checked))}
+      onClick={() => (!props.disabled && props.onSelected())}
       css={baseStyle}
       {...props}
     >
       <input
-        type="checkbox"
+        type="radio"
         checked={props.checked}
         disabled={props.disabled}
         onChange={() => { }}
@@ -88,14 +87,13 @@ export const Base = (props) => {
   )
 }
 
-const checkboxStyle = (theme) => css`
+const radioButtonStyle = (theme) => css`
   > input + label {
     &:before {
       box-shadow: ${theme.boxShadow};
     }
     &:after {
-      border-bottom: 2px solid ${theme.colors.primary};
-      border-right: 2px solid ${theme.colors.primary};
+      background: ${theme.colors.primary};
     }
   }
   > input:disabled:not(:checked) + label {
@@ -105,21 +103,38 @@ const checkboxStyle = (theme) => css`
   }
   > input:disabled:checked + label {
     &:after {
-      border-bottom: 2px solid ${theme.colors.primaryDisabled};
-      border-right: 2px solid ${theme.colors.primaryDisabled};
+      background: ${theme.colors.primaryDisabled};
     }
   }
 `
 
-export const Checkbox = (props) => (
+export const RadioButton = (props) => (
   <Base
-    css={checkboxStyle}
+    css={radioButtonStyle}
     {...props}
   />
 )
 
-Checkbox.propTypes = {
+export const RadioGroup = (props) => (
+  <div
+    {...props}
+  >
+    {(props.options.map((option) =>
+      <RadioButton
+        key={option.key}
+        label={option.value}
+        onSelected={() => props.onChange(option)}
+        checked={option.key === props.selected}
+        disabled={option.disabled || props.disabled}
+      />))
+
+    }
+  </div>
+)
+
+RadioGroup.propTypes = {
   onChange: PropTypes.func.isRequired,
-  checked: PropTypes.bool,
+  options: PropTypes.array.isRequired,
+  selected: PropTypes.string,
   disabled: PropTypes.bool
 }
