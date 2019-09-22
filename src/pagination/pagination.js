@@ -40,3 +40,46 @@ export class Pagination extends Component {
     );
   }
 }
+
+function pgntation() {
+  const allPages = calculatePage();
+
+}
+
+function calculatePage(pageSize, total) { 
+  return Math.floor((total - 1)/ pageSize) + 1
+}
+
+
+const pagination = () => {
+  console.log("Pagintaion");
+  const state = {
+    current: 1,
+    pageSize: 10
+  };
+  const props = {
+    current: 2,
+    pageSize: 10,
+    total: 70
+  };
+  const { current, pageSize } = state;
+  const allPages = calculatePage(undefined, state, props);
+  const prevPage = current - 1 > 0 ? current - 1 : 0;
+  const nextPage = current + 1 < allPages ? current + 1 : allPages;
+};
+
+// const calculatePage = (p, state, props) => {
+//   let pageSize = p;
+//   if (typeof pageSize === "undefined") {
+//     pageSize = state.pageSize;
+//   }
+//   return Math.floor((props.total - 1) / pageSize) + 1;
+// };
+
+// return (
+//   <ul
+//     className={`${prefixCls} ${prefixCls}-simple ${props.className}`}
+//     style={props.style}
+//     ref={this.savePaginationNode}
+//     {...dataOrAriaAttributeProps}
+//   ></ul>)
