@@ -3,6 +3,7 @@ import React from 'react'
 import { jsx, css } from '@emotion/core'
 import PropTypes from 'prop-types';
 import defaultTheme from '../themes/light';
+import { Spinner } from '../spinner';
 
 const baseStyles = (props) => css`
   background: ${defaultTheme.colors.primary};
@@ -30,7 +31,7 @@ const BaseButton = props => (
 export const Button = (props) => {
   const newProps = {
     ...props,
-    children: props.loading ? "loading..." : props.children, //Replace this with our loading component
+    children: props.loading ? <Spinner size={24} color="#ffffff"/> : props.children, //Replace this with our loading component
     disabled: props.loading === true ? true : props.disabled 
   }
   return (

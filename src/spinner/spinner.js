@@ -4,7 +4,6 @@ import { jsx, css } from '@emotion/core'
 import PropTypes from 'prop-types';
 import defaultTheme from '../themes/light';
 
-
 const baseStyles = (props) => css`
   display: inline-block;
   width: ${props.size/2}px;
@@ -49,20 +48,21 @@ export const Base = (props) => (
     <div></div>
   </div>)
 
-const spinnerStyle = (theme) => css`
-
+const spinnerStyle = (props) => (theme) => css`
+  > div {
+    border-color: ${props.color || theme.colors.primary}
+  }
 `
 
 export const Spinner = (props) => {
-  console.log(props)
   return (
   <Base
-    css={spinnerStyle}
+    css={spinnerStyle(props)}
     {...props} />
 )}
 
 Spinner.defaultProps = {
-  size: 30
+  size: 30,
 }
 
 Spinner.propTypes = {
