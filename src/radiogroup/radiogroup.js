@@ -116,9 +116,7 @@ export const RadioButton = (props) => (
 )
 
 export const RadioGroup = (props) => (
-  <div
-    {...props}
-  >
+  <div>
     {(props.options.map((option) =>
       <RadioButton
         key={option.key}

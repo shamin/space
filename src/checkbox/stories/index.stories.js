@@ -28,7 +28,7 @@ class SimpleCheckBox extends React.Component {
   }
 }
 
-storiesOf('Checkbox', module)
+storiesOf('Inputs', module)
   .add('Checkbox', () => (
     <SimpleCheckBox label="Checkbox" checked />
   ))
