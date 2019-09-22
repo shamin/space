@@ -31,7 +31,7 @@ export const Button = (props) => {
   const newProps = {
     ...props,
     children: props.loading ? "loading..." : props.children, //Replace this with our loading component
-    disabled: props.loading
+    disabled: props.loading === true ? true : props.disabled 
   }
   return (
     <BaseButton css={theme => ({
