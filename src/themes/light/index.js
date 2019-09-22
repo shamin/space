@@ -1,6 +1,7 @@
 const lightTheme = {
   colors: {
     primary: "#3785EC",
+    primaryDisabled: "rgba(55, 133, 236, 0.59)",
     error: "#EB5757",
     success: "#27AE60",
     backgroundPrimary: "#FFFFFF",
