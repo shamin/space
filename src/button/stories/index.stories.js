@@ -11,3 +11,18 @@ storiesOf('Button', module)
       <Button onClick={action('clicked')}>Hello Button</Button>
     </ThemeProvider>
   ))
+  .add('Disabled Button', () => (
+    <ThemeProvider theme={themes.light}>
+      <Button onClick={action('clicked')}>Hello Button</Button>
+    </ThemeProvider>
+  ))
+  .add('Icon Button', () => (
+    <ThemeProvider theme={themes.light}>
+      <Button onClick={action('clicked')}>Hello Button</Button>
+    </ThemeProvider>
+  ))
+  .add('Button Loading', () => (
+    <ThemeProvider theme={themes.light}>
+      <Button onClick={action('clicked')}>Hello Button</Button>
+    </ThemeProvider>
+  ))
