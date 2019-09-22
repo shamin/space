@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import themes from '../../themes'
 import { ThemeProvider } from 'emotion-theming'
+import themes from '../../themes'
 import { Button } from '..'
 import { SmallButton } from '../button';
 
