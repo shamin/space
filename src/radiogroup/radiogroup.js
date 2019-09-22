@@ -69,23 +69,21 @@ const baseStyle = css`
   }
 `
 
-export const Base = (props) => {
-  return (
-    <div
-      onClick={() => (!props.disabled && props.onSelected())}
-      css={baseStyle}
-      {...props}
-    >
-      <input
-        type="radio"
-        checked={props.checked}
-        disabled={props.disabled}
-        onChange={() => { }}
-      />
-      <label>{props.label}</label>
-    </div>
-  )
-}
+export const Base = (props) => (
+  <div
+    onClick={() => (!props.disabled && props.onSelected())}
+    css={baseStyle}
+    {...props}
+  >
+    <input
+      type="radio"
+      checked={props.checked}
+      disabled={props.disabled}
+      onChange={() => { }}
+    />
+    <label>{props.label}</label>
+  </div>
+)
 
 const radioButtonStyle = (theme) => css`
   > input + label {
