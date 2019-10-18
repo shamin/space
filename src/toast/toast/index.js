@@ -34,8 +34,7 @@ class Toaster {
   }
 
   notify = () => {
-    console.log("Notifying")
-    this.notifyHandler("Sending data to child component")
+    this.notifyHandler("This is a toast")
   }
 }
 

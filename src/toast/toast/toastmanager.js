@@ -26,20 +26,30 @@ export default class ToastManager extends React.Component {
 
     return {
       id: uniqueId,
-      title
+      title,
+      duration: 5
     }
   }
+
   getToasts = () => {
     return this.state.toasts
   }
 
+  removeToast = (id) => {
+    this.setState(prevState => ({
+      toasts: prevState.toasts.filter(toast => toast.id !== id)
+    }))
+  }
+
   render() {
-    return(
+    return (
       <span>
-        {this.state.toasts.map(()=>(
-          <Toast></Toast>
+        {this.state.toasts.map(({ id, title, ...props}) => (
+          <Toast key={id} onRemove={() => this.removeToast(id)} {...props}>
+            {title}
+          </Toast>
         ))}
       </span>
-    ) 
+    )
   }
 }
