@@ -1,1 +1,1 @@
-export { Button, TomatoButton } from './button' 
+export { Button, SmallButton } from './button'

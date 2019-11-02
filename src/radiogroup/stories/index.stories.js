@@ -2,51 +2,50 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { ThemeProvider } from 'emotion-theming'
 import themes from '../../themes'
-import { Select } from '..'
+import { RadioGroup } from '..'
 
-class SelectDemo extends React.Component {
+class SimpleRadioButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: "option-2",
+      selected: "radio-1",
     };
   }
 
-  onSelect = (selected) => {
-    this.setState({ selected })
+  onChange = (selected) => {
+    this.setState({ selected: selected.key })
   };
 
   render() {
     const options = [
       {
-        key: "option-1",
-        value: "Option 1",
+        key: "radio-1",
+        value: "Radio 1",
         disabled: true
       },
       {
-        key: "option-2",
-        value: "Option 2"
+        key: "radio-2",
+        value: "Radio 2"
       },
       {
-        key: "option-3",
-        value: "Option 3",
+        key: "radio-3",
+        value: "Radio 3",
         
       }]
     const { selected } = this.state;
     return (
       <ThemeProvider theme={themes.light}>
-        <Select
+        <RadioGroup
           options={options}
           name="radio-group"
           selected={selected}
-          onSelect={this.onSelect}
-          defaultValue={selected} />
+          onChange={this.onChange} />
       </ThemeProvider>
     );
   }
 }
 
 storiesOf('Inputs', module)
-  .add('Select', () => (
-    <SelectDemo label="Checkbox" />
+  .add('Radio Button', () => (
+    <SimpleRadioButton label="Checkbox" />
   ))

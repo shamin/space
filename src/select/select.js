@@ -1,47 +1,68 @@
-import React, { Component } from "react";
-import styled from "styled-components";
+import React from 'react'
+/** @jsx jsx */
+import { jsx, css } from '@emotion/core'
+import PropTypes from 'prop-types';
+import defaultTheme from '../themes/light';
 
-const SelectElement = styled.div`
+
+const baseStyle = css`
   position: relative;
-  max-width: 370px;
-  height: 50px;
+  display: inline-block;
   &:after {
     content: "";
-    width: 10px;
-    height: 10px;
+    width: 6px;
+    height: 6px;
     border-bottom: 1px solid #000;
     border-right: 1px solid #000;
     transform: rotate(45deg);
-    top: 10px;
+    top: 12px;
     right: 10px;
     position: absolute;
-    display: inline-block;
   }
-`;
-
-const SelectOption = styled.select`
-  left: 0;
-  position: absolute;
-  width: 100%;
-  border-radius: 2px;
-  border: none;
-  background-color: "red";
-  -webkit-appearance: none;
-  outline: none;
-  font-size: 1rem;
-  padding: 10px 25px;
-  padding-right: 35px;
-  color: #000;
-`;
-
-export class Select extends Component {
-  render() {
-    return (
-      <SelectElement>
-        <SelectOption defaultValue={this.props.defaultValue}>
-          {this.props.children}
-        </SelectOption>
-      </SelectElement>
-    );
+  & select {
+    -webkit-appearance: none;
+    border: none;
+    padding: 10px;
+    padding-right: 50px;
+    box-shadow: ${defaultTheme.boxShadow};
+    background: ${defaultTheme.colors.backgroundPrimary};
+    &:active, &:focus {
+      outline: none;
+    }
   }
+`
+
+export const Base = (props) => (
+  <div
+    css={baseStyle}
+    {...props}
+  >
+    <select onChange={(e) => props.onSelect(e.target.value)} defaultValue={props.defaultValue}>
+      {props.children}
+    </select>
+  </div>)
+
+const selectStyle = (theme) => css`
+  & select {
+    box-shadow: ${theme.boxShadow};
+    background: ${theme.colors.backgroundPrimary}
+  }
+`
+
+export const Select = (props) => (
+  <Base
+    css={selectStyle}
+    {...props}>
+    {props.options.map((option) =>
+      <option key={option.key} value={option.key}>{option.value}</option>)}
+  </Base>
+)
+
+Select.propTypes = {
+  defaultValue: PropTypes.string,
+  onSelect: PropTypes.func.isRequired,
+  options: PropTypes.array.isRequired,
+  selected: PropTypes.string,
+  disabled: PropTypes.bool
 }
+
