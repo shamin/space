@@ -1,4 +1,6 @@
 import React from 'react'
+import { jsx, css } from '@emotion/core'
+
 
 export default class Toast extends React.Component {
   constructor(props) {

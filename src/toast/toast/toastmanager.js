@@ -1,5 +1,6 @@
 import React from 'react'
 import Toast from './toast'
+import { Container } from './container.js'
 
 export default class ToastManager extends React.Component {
   static idCounter = 0
@@ -42,14 +43,15 @@ export default class ToastManager extends React.Component {
   }
 
   render() {
+    console.log(this.state.toasts)
     return (
-      <span>
+      <Container>
         {this.state.toasts.map(({ id, title, ...props}) => (
           <Toast key={id} onRemove={() => this.removeToast(id)} {...props}>
             {title}
           </Toast>
         ))}
-      </span>
+      </Container>
     )
   }
 }
