@@ -36,6 +36,11 @@ export const COLORS = {
   },
 };
 
+export const WEIGHTS = {
+  normal: 400,
+  medium: 500,
+}
+
 export const FONT_SIZES = {
   large: 1.25,
   medium: 1,
