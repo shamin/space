@@ -5,10 +5,9 @@ import Propsinfo from '../propsInfo';
 const ButtonInfo = () => (
   <div>
     <h3>Buttons</h3>
-    {/* <Button text="Hello" background="red"/> */}
     <div className="components-inline">
       <div className="component">
-        <Button text="Primary" />
+        <Button text="Primary" onClick={() => {}} />
       </div>
     </div>
     <Propsinfo component={Button} />
