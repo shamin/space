@@ -1,7 +1,9 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable import/prefer-default-export */
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import { COLORS, BOX_SHADOWS, FONT_SIZES } from '../variables';
+import { FONT_SIZES } from '../variables';
 // import { Spinner } from '../spinner';
 
 const baseStyles = (props) => css`
@@ -19,30 +21,32 @@ const baseStyles = (props) => css`
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity:  ${props.disabled ? 0.7 : 1};
+  opacity: ${props.disabled ? 0.7 : 1};
 `;
 
 export const Button = (props) => (
-  <button className={props.className} css={baseStyles(props)} onClick={props.onClick} disabled={props.disabled}>
+  <button
+    type="button"
+    className={props.className}
+    css={baseStyles(props)}
+    onClick={props.onClick}
+    disabled={props.disabled}
+  >
     {/* {props.loading ? <Spinner size={props.height / 2} color={props.color} /> : props.text} */}
     {props.text}
   </button>
 );
 
 Button.propTypes = {
-  text: PropTypes.string,
-  background: PropTypes.string,
-  color: PropTypes.string,
-  border: PropTypes.string,
-  onClick: PropTypes.func,
-  disabled: PropTypes.bool,
-  loading: PropTypes.bool,
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  disabled: PropTypes.bool.isRequired,
   width: PropTypes.number,
   height: PropTypes.number,
-  className: PropTypes.string,
-}
+  className: PropTypes.string.isRequired,
+};
 
 Button.defaultProps = {
   width: 136,
   height: 38,
-}
+};

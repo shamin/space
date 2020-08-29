@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable react/prop-types */
 import React from 'react';
 
 const PropsInfo = ({ component }) => (

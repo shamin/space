@@ -7,20 +7,29 @@
   "license": "MIT",
   "homepage": "http://shamin.github.io/space",
   "devDependencies": {
-    "babel-plugin-add-react-displayname": "^0.0.5",
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.10.3",
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.1",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
+    "babel-plugin-add-react-displayname": "^0.0.5",
     "babel-plugin-react-docgen": "^4.1.0",
+    "concurrently": "^4.1.2",
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "glob": "^7.1.4",
+    "prettier": "^2.1.1",
+    "pretty-quick": "^3.0.0",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3",
-    "concurrently": "^4.1.2",
-    "glob": "^7.1.4"
+    "webpack-dev-server": "^3.10.3"
   },
   "main": "commonjs/index.js",
   "module": "esm/index.js",
@@ -29,6 +38,7 @@
     "esm"
   ],
   "scripts": {
+    "lint": "eslint src/ src-docs/",
     "docs": "webpack-dev-server --open --mode=development",
     "build-docs": "webpack",
     "build-commonjs": "BABEL_ENV=commonjs babel src --out-dir commonjs --ignore '**/stories','**/test' --source-maps inline",
@@ -36,10 +46,11 @@
     "build": "concurrently --names 'commonjs,esm' 'yarn run build-commonjs' 'yarn run build-esm'"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.17",
     "@babel/runtime": "^7.10.3",
+    "@emotion/core": "^10.0.17",
     "babel-plugin-emotion": "^10.0.19",
     "emotion-theming": "^10.0.19",
+    "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   }
