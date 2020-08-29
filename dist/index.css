@@ -1,0 +1,12 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #161D2E;
+  }
+  
+  .components-inline {
+    display: flex;
+  }
+  .components-inline .component {
+    margin-right: 30px;
+  }
+  
