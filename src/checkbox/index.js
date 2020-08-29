@@ -6,7 +6,7 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import { COLORS } from '../variables';
+import { COLORS, FONT_SIZES } from '../variables';
 
 const baseStyles = css`
   cursor: pointer;
@@ -27,17 +27,17 @@ const checkboxStyle = (props) => css`
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='17' viewBox='0 0 16 17'%3E%3Cpath d='M0.9375,9l4.5,5.36207l9.5,-13.5' fill='none' fill-rule='evenodd' stroke='rgb%28255, 255, 255%29' stroke-linecap='round' stroke-width='2' /%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
   border: 2px solid ${props.checked ? COLORS.Primary : COLORS.Border.default};
   vertical-align: bottom;
 `;
 
 const labelStyle = css`
-  font-size: 28px;
+  font-size: 16px;
   color: ${COLORS.Neutral.N7};
-  margin-left: 15px;
+  margin-left: 7px;
 `;
 
 export const Checkbox = (props) => (
