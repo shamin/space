@@ -1,62 +1,48 @@
-import React from 'react'
 /** @jsx jsx */
-import { jsx, css } from '@emotion/core'
+import { jsx, css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import defaultTheme from '../themes/light';
-import { Spinner } from '../spinner';
+import { COLORS, BOX_SHADOWS, FONT_SIZES } from '../variables';
+// import { Spinner } from '../spinner';
 
 const baseStyles = (props) => css`
-  background: ${defaultTheme.colors.primary};
-  font-size: ${defaultTheme.font.size};
-  border-radius: ${defaultTheme.border.radius};
-  border: none;
-  width: 192px;
-  height: 48px;
-  opacity: ${props.disabled ? 0.7 : 1};
-  cursor: ${props.disabled ? 'not-allowed' : 'pointer'};
-  &:active, &:focus {
-    outline: none;
-  };
-  &:hover {
-    background: ${defaultTheme.colors.hoveredColor}
-  }
-`
+  cursor: ${props.disabled ? 'no-drop' : 'pointer'};
+  outline: none;
+  font-family: inherit;
+  width: ${props.width}px;
+  height: ${props.height}px;
+  font-size: ${props.fontSize || FONT_SIZES.medium}rem;
+  background: ${props.background};
+  color: ${props.color};
+  border: ${props.border};
+  box-shadow: ${props.boxShadow};
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity:  ${props.disabled ? 0.7 : 1};
+`;
 
-const BaseButton = props => (
-  <button
-    css={baseStyles(props)}
-    {...props} />
-)
-
-export const Button = (props) => {
-  const newProps = {
-    ...props,
-    children: props.loading ? <Spinner size={24} color="#ffffff"/> : props.children, //Replace this with our loading component
-    disabled: props.loading === true ? true : props.disabled 
-  }
-  return (
-    <BaseButton css={theme => ({
-      color: theme.colors.textLight,
-      borderRadius: theme.border.radius,
-      fontSize: theme.font.size,
-      '&:hover': {
-        background: (newProps.disabled) ? theme.colors.primary : theme.colors.hoveredColor,
-      },
-    })}
-      {...newProps} />
-  )
-}
-
-export const SmallButton = (props) => (
-  <Button css={theme => ({
-    width: 128,
-    height: 36,
-    fontSize: "0.9rem"
-  })}
-    {...props}></Button>
-)
+export const Button = (props) => (
+  <button className={props.className} css={baseStyles(props)} onClick={props.onClick} disabled={props.disabled}>
+    {/* {props.loading ? <Spinner size={props.height / 2} color={props.color} /> : props.text} */}
+    {props.text}
+  </button>
+);
 
 Button.propTypes = {
+  text: PropTypes.string,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  border: PropTypes.string,
+  onClick: PropTypes.func,
   disabled: PropTypes.bool,
-  loading: PropTypes.bool
-};
+  loading: PropTypes.bool,
+  width: PropTypes.number,
+  height: PropTypes.number,
+  className: PropTypes.string,
+}
+
+Button.defaultProps = {
+  width: 136,
+  height: 38,
+}
