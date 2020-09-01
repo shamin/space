@@ -40,13 +40,15 @@ export const Button = (props) => (
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-  disabled: PropTypes.bool.isRequired,
+  disabled: PropTypes.bool,
   width: PropTypes.number,
   height: PropTypes.number,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 Button.defaultProps = {
   width: 136,
   height: 38,
+  disabled: false,
+  className: '',
 };
